@@ -102,10 +102,10 @@ func returnBook(c *gin.Context) {
 func main() {
 	router := gin.Default()
 	router.GET("/books", getBooks)
-	router.POST("/books", createBook)
-	router.GET("/books/checkout", checkoutBook)
-	router.GET("/books/return", returnBook)
 	router.GET("/books/:id", bookById)
+	router.POST("/books", createBook)
+	router.PATCH("/books/checkout", checkoutBook)
+	router.PATCH("/books/return", returnBook)
 	if err := router.Run("localhost:8080"); err != nil {
 		return
 	}
